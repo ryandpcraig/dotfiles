@@ -130,15 +130,6 @@ if [ -x "$(command -v aws_completer)" ]; then
   complete -C 'aws_completer' aws
 fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      . $(brew --prefix)/etc/bash_completion
-      . $HOME/.bash/bash_aliases_completion
-      . $HOME/.bash/knife_autocomplete
-      . $HOME/.bash/kitchen-completion
-  fi
-fi
-
 eval $(thefuck --alias)
 
 source /etc/profile.d/vte-2.91.sh
@@ -152,7 +143,6 @@ source /etc/profile.d/vte-2.91.sh
 # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
 # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
 # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
-GIT_PROMPT_THEME=Single_Line_Ubuntu # use custom .git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 # GIT_PROMPT_THEME=Single_line_Ubuntu
 source ~/.bash/bash-git-prompt/gitprompt.sh
