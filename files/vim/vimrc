@@ -283,8 +283,6 @@
   " exit insert mode
   inoremap <C-c> <Esc>
 
-  " Find
-  map <C-f> /
   " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
   vnoremap <Tab> >
   vnoremap <S-Tab> <
@@ -302,8 +300,11 @@
   vmap <C-x> d
   vmap <C-v> p
   vmap <C-c> y
-  nnoremap <F2> :set invpaste paste?<CR>
-  set pastetoggle=<F2>
+
+  map <F1> maGG=g`a<CR>
+  nnoremap <F3> :set nowrap!<CR>
+  nnoremap <F4> :set invpaste paste?<CR>
+  set pastetoggle=<F4>
   " Use a scratch file for clipboard
   "vmap <leader>y :w! /tmp/vitmp<CR>
   "nmap <leader>p :r! cat /tmp/vitmp<CR>
@@ -407,6 +408,8 @@ fun! TrimWhitespace()
   call setpos('.', l:save_cursor)
 endfun
 
+
+
 command! TrimWhitespace call TrimWhitespace()
 noremap <Leader>w :call TrimWhitespace()<CR>
 " Some people like to automatically do this before they write a file to disk, like so:
@@ -416,6 +419,7 @@ noremap <Leader>w :call TrimWhitespace()<CR>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
 
 if exists("g:loaded_webdevicons")
   call webdevicons#refresh()

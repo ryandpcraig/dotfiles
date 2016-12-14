@@ -2,7 +2,6 @@
 
 function backupDotFiles() {
   mkdir -p files
-  cp $HOME/.config/terminator/terminator.config files/terminator.config
   cp $HOME/.bash/git_prompt.sh files/git_prompt.sh
   cp $HOME/.bash/shell_prompt.sh files/shell_prompt.sh
   cp $HOME/.bashrc files/bashrc
@@ -19,7 +18,6 @@ function backupDotFiles() {
   cp $HOME/.atom/*.less files/atom/
   cp $HOME/.atom/*.json files/atom/
   cp $HOME/.git-prompt-colors.sh files/git-prompt-colors.sh
-  cp $HOME/.config/tilda/config_0 files/tilda
   cp /etc/bash_completion.d/bash_aliases_completion files/bash_aliases_completion
 }
 
