@@ -8,68 +8,35 @@
   Plugin 'VundleVim/Vundle.vim'
 
   Plugin 'tpope/vim-sensible'
-  "Plugin 'edkolev/promptline.vim'
-  "Plugin 'edkolev/tmuxline.vim'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'breuckelen/vim-resize'
-  "Plugin 'powerline/powerline'
-  "Plugin 'tpope/vim-flagship'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'tpope/vim-fugitive'
   Plugin 'gregsexton/gitv'
   Plugin 'junegunn/gv.vim'
-  "Plugin 'miyakogi/conoline.vim'
-  "Plugin 'mhinz/vim-signify'
-  "Plugin 'gcmt/breeze.vim'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'scrooloose/nerdtree'
-  "Plugin 'jlanzarotta/bufexplorer'
-  "Plugin 'majutsushi/tagbar'
-  "Plugin 'severin-lemaignan/vim-minimap'
   Plugin 'nelstrom/vim-visual-star-search'
-  "Plugin 'Shougo/neocomplete.vim.git'
-  "Plugin 'Shougo/neosnippet'
-  "Plugin 'Shougo/neosnippet-snippets'
-  " Plugin 'SirVer/ultisnips'
   Plugin 'chrisbra/vim-diff-enhanced'
   Plugin 'MarcWeber/vim-addon-mw-utils' "requiered by snipmate
   Plugin 'tomtom/tlib_vim' "requiered by snipmate
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
   Plugin 'Valloric/YouCompleteMe'
-  "Plugin 'davidhalter/jedi-vim.git'
   Plugin 'ervandew/supertab'
-  "Plugin 'sjl/gundo.vim'
   Plugin 'Yggdroot/indentLine'
-  "Plugin 'luochen1990/indent-detector.vim'
-  " Plugin 'tpope/vim-sleuth'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-repeat'
   Plugin 'tomtom/tcomment_vim'
-  "Plugin 'scrooloose/nerdcommenter'
   Plugin 'ryanoasis/vim-devicons'
-  Plugin 'nvie/vim-togglemouse'
-  "Plugin 'LucHermitte/lh-vim-lib'
-  "Plugin 'LucHermitte/lh-tags'
-  "Plugin 'LucHermitte/lh-dev'
-  "Plugin 'LucHermitte/lh-brackets'
-  "Plugin 'alvan/vim-closetag'
   Plugin 'Townk/vim-autoclose'
   Plugin 'tpope/vim-endwise'
-  " Plugin 'godlygeek/tabular'
-  "Plugin 'neilagabriel/vim-geeknote'
   Plugin 'elzr/vim-json'
-  "Plugin 'kopischke/vim-stay'
-  "Plugin 'kopischke/vim-fetch'
   Plugin 'Konfekt/FastFold'
   Plugin 'luisdavim/pretty-folds'
   Plugin 'scrooloose/syntastic'
-  " Plugin 'metakirby5/codi.vim'
-  "Plugin 'lilydjwg/colorizer'
-  "Plugin 'chriskempson/base16-vim'
   Plugin 'flazz/vim-colorschemes'
-  " Plugin 'rakr/vim-one'
   Plugin 'nginx.vim'
   Plugin 'benmills/vimux'
 
@@ -184,40 +151,8 @@
   set smartcase
 
   " In many terminal emulators the mouse works just fine, thus enable it.
-  if has('mouse')
-    set mouse=a
-  endif
 
   " Enable (better) mouse support under tmux
-  if &term =~ '^screen' && exists('$TMUX')
-    set mouse+=a
-    " tmux knows the extended mouse mode
-    set ttymouse=xterm2
-    " tmux will send xterm-style keys when xterm-keys is on
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
-    execute "set <xHome>=\e[1;*H"
-    execute "set <xEnd>=\e[1;*F"
-    execute "set <Insert>=\e[2;*~"
-    execute "set <Delete>=\e[3;*~"
-    execute "set <PageUp>=\e[5;*~"
-    execute "set <PageDown>=\e[6;*~"
-    execute "set <xF1>=\e[1;*P"
-    execute "set <xF2>=\e[1;*Q"
-    execute "set <xF3>=\e[1;*R"
-    execute "set <xF4>=\e[1;*S"
-    execute "set <F5>=\e[15;*~"
-    execute "set <F6>=\e[17;*~"
-    execute "set <F7>=\e[18;*~"
-    execute "set <F8>=\e[19;*~"
-    execute "set <F9>=\e[20;*~"
-    execute "set <F10>=\e[21;*~"
-    execute "set <F11>=\e[23;*~"
-    execute "set <F12>=\e[24;*~"
-  endif
-
   " do not history when leavy buffer
   set hidden
 

@@ -231,7 +231,7 @@ tmux_conf_theme_clock_style='24'
 # this is the place to override or undo settings
 
 # increase history size
-set -g history-limit 10000
+set -g history-limit 100000
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -254,8 +254,6 @@ bind S run "cut -c3- ~/.tmux.conf | sh -s _split_window #{pane_tty} -v -c '#{pan
 
 bind -r PPage previous-window # select previous window
 bind -r NPage next-window     # select next window
-
-bind-key C-b set-window-option synchronize-panes
 
 set -g @yank_selection 'primary'
 

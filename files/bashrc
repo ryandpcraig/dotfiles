@@ -152,7 +152,7 @@ source /etc/profile.d/vte-2.91.sh
 # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
 # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
 # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
-GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
+GIT_PROMPT_THEME=Single_Line_Ubuntu # use custom .git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 # GIT_PROMPT_THEME=Single_line_Ubuntu
 source ~/.bash/bash-git-prompt/gitprompt.sh
@@ -176,4 +176,6 @@ CONFIGURED="true"
 if command -v tmux>/dev/null; then
     [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
-
+if [[ -f ${HOME}/.bash_variables ]]; then
+  source ${HOME}/.bash_variables
+fi
