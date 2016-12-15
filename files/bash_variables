@@ -12,6 +12,7 @@ export __GIT_PROMPT_IGNORE_STASH=''
 export GIT_PROMPT_ONLY_IN_REPO='0'
 export __GIT_PROMPT_SHOW_CHANGED_FILES_COUNT='1'
 export GIT_PROMPT_THEME='Single_line_Ubuntu'
+#export GIT_PROMPT_THEME='Single_line_Minimalist'
 export NR_API_KEY="$(cat ${HOME}/.newrelic_api_key)"
 export PAGER='/usr/bin/most'
 export PROD='production.smartbox.com'

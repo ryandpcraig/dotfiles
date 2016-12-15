@@ -91,7 +91,9 @@
     autocmd VimEnter * tab all
     "autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
   endif
-
+  if has("autocmd")
+      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  endif
   if has('autocmd')
     filetype plugin indent on
   endif
@@ -304,6 +306,8 @@
   map <F1> maGG=g`a<CR>
   nnoremap <F3> :set nowrap!<CR>
   nnoremap <F4> :set invpaste paste?<CR>
+  nnoremap <F5> :set nohlsearch!<CR>
+
   set pastetoggle=<F4>
   " Use a scratch file for clipboard
   "vmap <leader>y :w! /tmp/vitmp<CR>
@@ -316,7 +320,6 @@
   inoremap <C-z> <Esc>:undo<CR>
   nnoremap <C-y> :redo<CR>
   inoremap <C-y> <Esc>:redo<CR>
-  nnoremap <F5>  :GundoToggle<CR>
 
   noremap <Leader>i :set list!<CR>
 
