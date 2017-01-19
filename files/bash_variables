@@ -1,4 +1,7 @@
 #!/bin/bash'
+export NAME="Ryan Craig"
+export EMAIL="ryan.craig@smartbox.com"
+
 export CHEF_COOKBOOKS='/home/ryancrai/gitlab/chef-cookbooks'
 export CHEF_DATA_BAGS='/home/ryancrai/gitlab/chef-data-bags'
 export CHEF_ENVIRONMENTS='/home/ryancrai/gitlab/chef/environments'
@@ -12,7 +15,6 @@ export __GIT_PROMPT_IGNORE_STASH=''
 export GIT_PROMPT_ONLY_IN_REPO='0'
 export __GIT_PROMPT_SHOW_CHANGED_FILES_COUNT='1'
 export GIT_PROMPT_THEME='Single_line_Ubuntu'
-#export GIT_PROMPT_THEME='Single_line_Minimalist'
 export NR_API_KEY="$(cat ${HOME}/.newrelic_api_key)"
 export PAGER='/usr/bin/most'
 export PROD='production.smartbox.com'
