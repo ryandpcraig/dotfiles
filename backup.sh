@@ -1,28 +1,9 @@
 #!/bin/bash
 
-function backupDotFiles() {
-  mkdir -p files
-  cp $HOME/.bash/git_prompt.sh files/git_prompt.sh
-  cp $HOME/.bash/shell_prompt.sh files/shell_prompt.sh
-  cp $HOME/.bashrc files/bashrc
-  cp $HOME/.bash_profile files/bash_profile
-  cp $HOME/.bash_variables files/bash_variables
-  cp $HOME/.tmux.conf.local files/tmux.conf.local
-  cp $HOME/.screenrc files/screenrc
-  cp $HOME/.profile files/profile
-  cp $HOME/.vimrc files/vim/vimrc
-  cp $HOME/.vimrc.local files/vim/vimrc.local
-  cp -r $HOME/.vim/ft* files/vim/
-  cp $HOME/.atom/*.cson files/atom/
-  cp $HOME/.atom/*.coffee files/atom/
-  cp $HOME/.atom/*.less files/atom/
-  cp $HOME/.atom/*.json files/atom/
-  cp $HOME/.git-prompt-colors.sh files/git-prompt-colors.sh
-  cp /etc/bash_completion.d/bash_aliases_completion files/bash_aliases_completion
-}
-
-function backupAtomPackages() {
-  apm list --installed --bare | cut -d'@' -f1 | grep -vE '^$' > files/atom-packages.lst
+INCLUDE="$PWD/include.lst"
+EXCLUDE="$PWD/exclude.lst"
+function backupFiles() {
+  rsync -aP  --files-from="$INCLUDE" --exclude-from="$EXCLUDE" / files/
 }
 
 function backupPPAs() {
@@ -50,9 +31,9 @@ function backupPackages() {
 }
 
 function backupAll() {
-  backupDotFiles
-  backupAtomPackages
+  backupFiles
   backupPPAs
+  tar -cvzf "backup_$(date +%Y%m%d_%H%M).tar.gz" files/ restore* config.sh
 }
 
 function restorePackages() {
@@ -63,7 +44,7 @@ function restorePackages() {
 }
 
 function restoreRepos() {
-  bash restore-repos.#!/bin/sh
+  bash restore-repos.sh
   bash restore-ppas.sh
 }
 
@@ -77,11 +58,8 @@ function restoreAll() {
 }
 
 case "$1" in
-  "dotfiles" )
-    backupDotFiles
-    ;;
-   "atompackages" | "apkgs" | "atom" )
-    backupAtomPackages
+  "files" )
+    backupFiles
     ;;
   "ppas | repos" )
     backupPPAs

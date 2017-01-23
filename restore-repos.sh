@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-add-repository \'https://apt.dockerproject.org/repo ubuntu-yakkety main\'
+sudo apt-add-repository \'https://apt.dockerproject.org/repo ubuntu-xenial main\'
 sudo apt-add-repository \'http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse\'
 sudo apt-add-repository \'http://repository.spotify.com stable non-free\'
 sudo apt-add-repository \'https://tel.red/repos/ubuntu yakkety non-free\'

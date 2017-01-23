@@ -1,9 +1,0 @@
-"*":
-  core:
-    telemetryConsent: "no"
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
-  welcome:
-    showOnStartup: false
